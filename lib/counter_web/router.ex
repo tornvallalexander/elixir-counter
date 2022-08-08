@@ -19,6 +19,7 @@ defmodule CounterWeb.Router do
 
     get "/", PageController, :index
     live "/counter", CounterLive
+    live "/todo", TodoLive
   end
 
   # Other scopes may use custom stacks.
