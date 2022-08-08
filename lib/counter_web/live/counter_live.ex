@@ -1,10 +1,5 @@
 defmodule CounterWeb.CounterLive do
-  use Phoenix.LiveView
-
-  def mount(_session, socket) do
-    socket = assign(socket, :counter, 0)
-    {:ok, socket}
-  end
+  use CounterWeb, :live_view
 
   def render(assigns) do
     ~L"""
@@ -12,5 +7,10 @@ defmodule CounterWeb.CounterLive do
     <button>+</button>
     <button>-</button>
     """
+  end
+
+  def mount(_params, _other, socket) do
+    socket = assign(socket, :count, 0)
+    {:ok, socket}
   end
 end
